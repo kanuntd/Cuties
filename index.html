@@ -36,7 +36,7 @@
 
 </head>
 
-<body data-spy="scroll" data-target=".navbar-collapse">
+<body data-spy="scroll" data-target=".navbar-collapse" onload="_cntDown=setInterval('ShowTimes()',1000)">
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -125,7 +125,7 @@
                                 </div>
                             </div>
 
-                            <p class="time">00:00</p>
+                            <p class="time" id="time20">00:00</p>
                             <a href="" class="btn btn-default"><i class="fa fa-gavel"></i></a>
                         </div>
                         <div class="col-md-3">
@@ -137,7 +137,7 @@
                                     <p>eyeshadow สไตล์เกาหลี</p>
                                 </div>
                             </div>
-                            <p class="time">00:00</p>
+                            <p class="time" id="time19">00:00</p>
                             <a href="" class="btn btn-default"><i class="fa fa-gavel"></i></a>
                         </div>
                         <div class="col-md-3">
@@ -149,7 +149,7 @@
                                     <p>eyeshadow every day look </p>
                                 </div>
                             </div>
-                            <p class="time">00:00</p>
+                            <p class="time"  id="time1">00:00</p>
                             <a href="" class="btn btn-default"><i class="fa fa-gavel"></i> </a>
                         </div>
                         <div class="col-md-3">
@@ -161,7 +161,7 @@
                                     <p>eyeshadow ในฝันของผู้หญิงหลายๆ คน</p>
                                 </div>
                             </div>
-                            <p class="time">00:00</p>
+                            <p class="time"  id="time2">00:00</p>
                             <a href="" class="btn btn-default"><i class="fa fa-gavel"></i></a>
                         </div>
 
@@ -171,27 +171,27 @@
                         </div><!-- End of head title -->
                     <p class="h8">สินค้าทั้งหมด</p>
                     <div class="separator"></div>
-
+                   
                     <div class="row">
 
                         <div class="col-md-3">
                             <img src="assets/images/lip/bobbi-brown.jpg" class="setimage">
-                            <p class="time">00:00</p>
+                            <p class ="time" id="time18">00:00</p>
                             <a href="" class="btn btn-default"><i class="fa fa-gavel"></i></a>
                         </div>
                         <div class="col-md-3">
                             <img src="assets/images/lip/3ce.jpg" class="setimage">
-                            <p class="time">00:00</p>
+                            <p class="time"  id="time3">00:00</p>
                             <a href="" class="btn btn-default"><i class="fa fa-gavel"></i> </a>
                         </div>
                         <div class="col-md-3">
                             <img src="assets/images/lip/etude.jpg" class="setimage">
-                            <p class="time">00:00</p>
+                            <p class="time"  id="time4">00:00</p>
                             <a href="" class="btn btn-default"><i class="fa fa-gavel"></i></a>
                         </div>
                         <div class="col-md-3">
                             <img src="assets/images/lip/MAC.jpg" class="setimage">
-                            <p class="time">00:00</p>
+                            <p class="time"  id="time5">00:00</p>
                             <a href="" class="btn btn-default"><i class="fa fa-gavel"></i> </a>
                         </div>
 
@@ -201,47 +201,48 @@
 
                         <div class="col-md-3">
                             <img src="assets/images/blush/canmake.jpg" class="setimage">
-                            <p class="time">00:00</p>
+                            <p class="time"  id="time6">00:00</p>
                             <a href="" class="btn btn-default"><i class="fa fa-gavel"></i></a>
                         </div>
                         <div class="col-md-3">
                             <img src="assets/images/blush/3ce.jpg" class="setimage">
-                            <p class="time">00:00</p>
+                            <p class="time"  id="time7">00:00</p>
                             <a href="" class="btn btn-default"><i class="fa fa-gavel"></i> </a>
                         </div>
                         <div class="col-md-3">
                             <img src="assets/images/blush/Sleek.jpg" class="setimage">
-                            <p class="time">00:00</p>
+                            <p class="time"  id="time8">00:00</p>
                             <a href="" class="btn btn-default"><i class="fa fa-gavel"></i></a>
                         </div>
                         <div class="col-md-3">
                             <img src="assets/images/blush/toofaced.jpg" class="setimage">
-                            <p class="time">00:00</p>
+                            <p class="time"  id="time9">00:00</p>
                             <a href="" class="btn btn-default"><i class="fa fa-gavel"></i> </a>
                         </div>
 
                     </div>
+                    
 
                     <div class="row">
 
                         <div class="col-md-3">
                             <img src="assets/images/foundation/bobbibrown.JPG" class="setimage">
-                            <p class="time">00:00</p>
+                            <p class="time"  id="time10">00:00</p>
                             <a href="" class="btn btn-default"><i class="fa fa-gavel"></i></a>
                         </div>
                         <div class="col-md-3">
                             <img src="assets/images/foundation/chanel.jpg" class="setimage">
-                            <p class="time">00:00</p>
+                            <p class="time"  id="time11">00:00</p>
                             <a href="" class="btn btn-default"><i class="fa fa-gavel"></i> </a>
                         </div>
                         <div class="col-md-3">
                             <img src="assets/images/foundation/makeupforever.png" class="setimage">
-                            <p class="time">00:00</p>
+                            <p class="time"  id="time12">00:00</p>
                             <a href="" class="btn btn-default"><i class="fa fa-gavel"></i></a>
                         </div>
                         <div class="col-md-3">
                             <img src="assets/images/foundation/ysl.JPG" class="setimage">
-                            <p class="time">00:00</p>
+                            <p class="time"  id="time13">00:00</p>
                             <a href="" class="btn btn-default"><i class="fa fa-gavel"></i> </a>
                         </div>
 
@@ -251,22 +252,22 @@
 
                         <div class="col-md-3">
                             <img src="assets/images/powder/lauramercier.jpg" class="setimage">
-                            <p class="time">00:00</p>
+                            <p class="time"  id="time14">00:00</p>
                             <a href="" class="btn btn-default"><i class="fa fa-gavel"></i></a>
                         </div>
                         <div class="col-md-3">
                             <img src="assets/images/powder/mac.jpeg" class="setimage">
-                            <p class="time">00:00</p>
+                            <p class="time"  id="time15">00:00</p>
                             <a href="" class="btn btn-default"><i class="fa fa-gavel"></i> </a>
                         </div>
                         <div class="col-md-3">
                             <img src="assets/images/powder/oriental.jpg" class="setimage">
-                            <p class="time">00:00</p>
+                            <p class="time" id="time16">00:00</p>
                             <a href="" class="btn btn-default"><i class="fa fa-gavel"></i></a>
                         </div>
                         <div class="col-md-3">
                             <img src="assets/images/powder/three.jpg" class="setimage">
-                            <p class="time">00:00</p>
+                            <p class="time" id="time17">00:00</p>
                             <a href="" class="btn btn-default"><i class="fa fa-gavel"></i> </a>
                         </div>
 
@@ -296,6 +297,8 @@
         </div><!-- End of container -->
     </footer><!-- End of footer -->
    
+
+    <!-- PopUp Auto -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
         <div class="modal-dialog" role="document">
          <div class="login-wrap">
@@ -354,6 +357,7 @@
           </div>
         </div>
       </div>
+      <!-- end Popup -->
 
     <!-- START SCROLL TO TOP  -->
 
@@ -366,9 +370,12 @@
 
     <script src="assets/js/jquery.easing.1.3.js"></script>
     <script src="assets/js/masonry/masonry.min.js"></script>
-    <script type="text/javascript">
+    <script src="assets/js/time.js"></script>
+   
+   <script type="text/javascript">
         $('.mixcontent').masonry();
     </script>
+     
      <script>
         $(document).ready(function(){
            $('#myModal').modal('show');
