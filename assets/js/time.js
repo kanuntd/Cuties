@@ -37,15 +37,9 @@ function ShowTimes() {
     document.getElementById("time18").innerHTML = str;
     document.getElementById("time19").innerHTML = str;
     document.getElementById("time20").innerHTML = str;
+    document.getElementById("time15").innerHTML = str;
     
 
     
     }
     
-    var _cntDown;
-    
-    function dontClick() {
-    
-    document.getElementById('start_butt').style.display = ""
-    
-    }
