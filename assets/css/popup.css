@@ -8,8 +8,7 @@ body{
 .clearfix:after,.clearfix:before{content:'';display:table}
 .clearfix:after{clear:both;display:block}
 a{color:inherit;text-decoration:none}
-
-.login-wrap{
+ .login-wrap{
 	width:100%;
 	margin:auto;
 	max-width:525px;
@@ -24,7 +23,7 @@ a{color:inherit;text-decoration:none}
 	position:absolute;
     padding:90px 70px 50px 70px;
     
-	background:rgba(40,57,101,.9);
+	background:rgba(248, 64, 79, 0.678);
 }
 .login-html .sign-in-htm,
 .login-html .sign-up-htm{
@@ -58,7 +57,7 @@ a{color:inherit;text-decoration:none}
 .login-html .sign-in:checked + .tab,
 .login-html .sign-up:checked + .tab{
 	color:#fff;
-	border-color:#1161ee;
+	border-color:#080808;
 }
 .login-form{
 	min-height:345px;
@@ -88,11 +87,11 @@ a{color:inherit;text-decoration:none}
 	-webkit-text-security:circle;
 }
 .login-form .group .label{
-	color:#aaa;
+	color:rgb(255, 251, 251);
 	font-size:12px;
 }
 .login-form .group .button{
-	background:#1161ee;
+	background:#080808;
 }
 .login-form .group label .icon{
 	width:15px;
@@ -126,7 +125,7 @@ a{color:inherit;text-decoration:none}
 	color:#fff;
 }
 .login-form .group .check:checked + label .icon{
-	background:#1161ee;
+	background:#080808;
 }
 .login-form .group .check:checked + label .icon:before{
 	transform:scale(1) rotate(45deg);
@@ -140,11 +139,10 @@ a{color:inherit;text-decoration:none}
 .login-html .sign-up:checked + .tab + .login-form .sign-up-htm{
 	transform:rotate(0);
 }
-
-.hr{
+ .hr{
 	height:2px;
 	margin:60px 0 50px 0;
-	background:rgba(255,255,255,.2);
+	background:rgba(46, 45, 45, 0.2);
 }
 .foot-lnk{
 	text-align:center;

@@ -18,6 +18,7 @@ body {
     margin-right: 0;
     font-family: 'montserratlight';
 }
+
 .preloader {
     position: fixed;
     top: 0;
@@ -45,25 +46,25 @@ body {
 }
 .topnav {
     overflow: hidden;
-    background-color: rgb(201, 167, 105);
+    background-color: rgb(56, 56, 56);
   }
   
 .topnav a {
     float: left;
-    color: #f2f2f2;
+    color: #fdfcfc;
     text-align: center;
-    padding: 20px 96px;
+    padding: 15px 96px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 14px;
   }
   
 .topnav a:hover {
-    background-color: #ddd;
-    color: rgb(253, 250, 250);
+    background-color: rgb(12, 12, 12);
+    color: rgb(253, 253, 253);
   }
   
 .topnav a.active {
-    background-color: rgb(250, 144, 117);
+    background-color: rgb(248, 64, 80);
     color: white;
 }
 img {
@@ -233,7 +234,7 @@ p:last-child {
     color: #5e9a28;
 }
 .colorsbg{
-    background:#FFE1BD ;
+    background:rgb(248, 64, 80) ;
 }
 .whitetext {
     color: #fff;
@@ -242,7 +243,7 @@ p:last-child {
     background: #000;
 }
 .lightbg {
-    background-color:#FFE1BD;
+    background-color:white;
 }
 .transition {
     -webkit-transition: all 300ms linear;
@@ -402,6 +403,22 @@ Button
     margin : 10px auto 20px auto;
 
 }
+.btn1 {
+    display: block;
+    width: 120px;
+    padding: .4em;
+    height: 45px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 1px;
+    font-size: 1.125rem;
+    border-radius: 50px;
+    background-color: #000;
+    transition: .5s; 
+    border:1px solid #000;
+    margin : 10px auto 20px auto;
+
+}
 .btn:hover {
     background-color:#ffcb93;
     color: #000;
@@ -410,13 +427,23 @@ Button
 }
 .btn-default {
     color: #333;
-    background-color: rgb(253, 109, 109);
+    background-color: rgb(248, 64, 80);
     border-color: #ccc;
 }
 .btn-default:hover {
     color: #333;
     background-color: rgb(202, 51, 51);
     border-color:#000;
+}
+.btn-default1 {
+    color: #333;
+    background-color: white;
+    border-color: #ccc;
+}
+.btn-default1:hover {
+    color: white;
+    background-color: #ffcb93;
+    border-color:white;
 }
 
 /*
@@ -529,7 +556,7 @@ input::-ms-input-placeholder {
     z-index: 300;
     box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
     -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
-    background-color:#fff;
+    background-color:black;
     -webkit-transition:all .3s;
     -moz-transition:all .3s;
     transition:all .3s;
@@ -551,7 +578,7 @@ input::-ms-input-placeholder {
 }
 .main_menu_bg{
     margin-top: 0px;
-    background-color: #fff;
+    background-color: black;
     border-bottom: 1px solid #ddd;
     height: 100px;
     transition: all 0.3s;
@@ -570,7 +597,7 @@ input::-ms-input-placeholder {
     margin: 15px auto;
 }
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus{
-    color:#000000;
+    color:rgb(252, 44, 78);
 }
 .main_menu_bg .nave_menu {
     margin-top:0px;
@@ -586,10 +613,10 @@ input::-ms-input-placeholder {
     padding-top: 15px;
     padding-bottom: 20px;
     font-size: 0.875rem;
-    color: #333;
+    color: white;
 }
 .navbar-brand>img {
-    max-width: 80%;
+    max-width: 50%;
 }
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus{
     background-color:transparent;
@@ -838,10 +865,10 @@ service section css
                     footer section
 ====================================================================*/
 .footer{
-    border-top:1px solid #d8d8d8;
+    border-top:1px solid rgb(248, 64, 80);
 }
 .copyright_text p{
-    color:#aaa79e;
+    color:rgb(248, 64, 80);
     font-size:0.8125rem;
     /*    line-height: 25px;*/
     padding: 40px 20px;
@@ -968,7 +995,7 @@ service section css
     position: relative;
 }
 .single_work_overlay{
-    background: #FFE1BD;
+    background: rgba(248, 64, 79, 0.87);
     width:80%;
     height: 80%;
     left:10%;
