@@ -16,7 +16,7 @@ function ShowTimes() {
     
    
     
-    str += ''+hrs+':'+mins+':'+secs
+    str += ''+''+mins+':'+secs
     
     document.getElementById("time1").innerHTML = str;
     document.getElementById("time2").innerHTML = str;
