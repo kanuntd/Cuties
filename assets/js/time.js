@@ -14,32 +14,6 @@ function ShowTimes() {
    var str = '';
    
   
-   
-   str += ''+hrs+':'+mins+':'+secs
-   
-   document.getElementById("time1").innerHTML = str;
-   document.getElementById("time2").innerHTML = str;
-   document.getElementById("time3").innerHTML = str;
-   document.getElementById("time4").innerHTML = str;
-   document.getElementById("time5").innerHTML = str;
-   document.getElementById("time6").innerHTML = str;
-   document.getElementById("time7").innerHTML = str;
-   document.getElementById("time8").innerHTML = str;
-   document.getElementById("time9").innerHTML = str;
-   document.getElementById("time10").innerHTML = str;
-   document.getElementById("time11").innerHTML = str;
-   document.getElementById("time12").innerHTML = str;
-   document.getElementById("time13").innerHTML = str;
-   document.getElementById("time14").innerHTML = str;
-   document.getElementById("time15").innerHTML = str;
-   document.getElementById("time16").innerHTML = str;
-   document.getElementById("time17").innerHTML = str;
-   document.getElementById("time18").innerHTML = str;
-   document.getElementById("time19").innerHTML = str;
-   document.getElementById("time20").innerHTML = str;
-   
-    
-<<<<<<< HEAD
     str += ''+''+mins+':'+secs
     
     document.getElementById("time1").innerHTML = str;
@@ -65,10 +39,5 @@ function ShowTimes() {
     
 
     
-    }
+}
     
-=======
-   }
-   
-  
->>>>>>> fdc5f68f5972037f3f1f7630276cababe576b7b3

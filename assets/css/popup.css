@@ -14,7 +14,8 @@ a{color:inherit;text-decoration:none}
 	max-width:525px;
 	min-height:670px;
 	position:relative;
-    background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
+	background:url(https://i.pinimg.com/564x/4d/3a/e0/4d3ae029a9a2c903024d16a14e541203.jpg) no-repeat center;
+	background-size: cover;
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }
 .login-html{
@@ -22,8 +23,8 @@ a{color:inherit;text-decoration:none}
 	height:100%;
 	position:absolute;
     padding:90px 70px 50px 70px;
-    
-	background:rgba(248, 64, 79, 0.678);
+    background:rgba(255, 255, 255, 0.123);
+	
 }
 .login-html .sign-in-htm,
 .login-html .sign-up-htm{
@@ -56,7 +57,7 @@ a{color:inherit;text-decoration:none}
 }
 .login-html .sign-in:checked + .tab,
 .login-html .sign-up:checked + .tab{
-	color:#fff;
+	color:#000000;
 	border-color:#080808;
 }
 .login-form{
@@ -75,23 +76,31 @@ a{color:inherit;text-decoration:none}
 	color:#fff;
 	display:block;
 }
-.login-form .group .input,
+.login-form .group .input{
+	border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	background-color: #ffffffd3;
+	color:rgba(6, 6, 7, 0.76);
+}
 .login-form .group .button{
 	border:none;
 	padding:15px 20px;
 	border-radius:25px;
-	background:rgba(255,255,255,.1);
+	background-color: #fff;
+	color: #c8c8c8;
 }
 .login-form .group input[data-type="password"]{
 	text-security:circle;
 	-webkit-text-security:circle;
 }
 .login-form .group .label{
-	color:rgb(255, 251, 251);
-	font-size:12px;
+	color:rgba(6, 6, 7, 0.76);
+	font-size:16px;
+	text-align: left;
 }
 .login-form .group .button{
-	background:#080808;
+	background:rgba(0, 0, 0, 0.801);
 }
 .login-form .group label .icon{
 	width:15px;
@@ -99,7 +108,7 @@ a{color:inherit;text-decoration:none}
 	border-radius:2px;
 	position:relative;
 	display:inline-block;
-	background:rgba(255,255,255,.1);
+	background:rgba(6, 6, 7, 0.76);
 }
 .login-form .group label .icon:before,
 .login-form .group label .icon:after{
@@ -122,7 +131,7 @@ a{color:inherit;text-decoration:none}
 	transform:scale(0) rotate(0);
 }
 .login-form .group .check:checked + label{
-	color:#fff;
+	color:rgba(6, 6, 7, 0.76);
 }
 .login-form .group .check:checked + label .icon{
 	background:#080808;

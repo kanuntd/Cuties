@@ -616,6 +616,8 @@ input::-ms-input-placeholder {
     color: white;
 }
 .navbar-brand>img {
+    padding-top: 0.1px;
+    margin-top: 0.5px;
     max-width: 50%;
 }
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus{
