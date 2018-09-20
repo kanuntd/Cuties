@@ -1,0 +1,24 @@
+{
+  "name": "cuties",
+  "version": "1.0.0",
+  "description": "== Theme Name: Clemo - FREE HTML5 Multipurpose Portfolio Template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kanuntd/Cuties.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kanuntd/Cuties/issues"
+  },
+  "homepage": "https://github.com/kanuntd/Cuties#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "nodemon": "^1.18.4"
+  }
+}
