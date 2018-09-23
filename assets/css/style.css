@@ -234,7 +234,7 @@ p:last-child {
     color: #5e9a28;
 }
 .colorsbg{
-    background:rgb(248, 64, 80) ;
+    background:rgb(207, 115, 123) ;
 }
 .whitetext {
     color: #fff;
@@ -1157,6 +1157,14 @@ ul li.filter{
     color: rgb(212, 38, 38);
     text-align: center;
     font-size: 40px;
+    margin: 0;
+    margin : 10px auto 20px auto;
+    
+}
+.time1{
+    color: rgb(5, 5, 5);
+    text-align: center;
+    font-size: 20px;
     margin: 0;
     margin : 10px auto 20px auto;
     
