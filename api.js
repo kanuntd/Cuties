@@ -80,7 +80,7 @@ MongoClient.connect("mongodb://test123:test123@ds245532.mlab.com:45532/tests", f
            email:req.query.message
         };
           console.log(req.query.name)
-           dbo.collection("User").insertOne(dataq, function(err, res) {
+           dbo.collection("message").insertOne(dataq, function(err, res) {
               if (err) throw err;
                console.log("Ok");
               
