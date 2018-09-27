@@ -57,26 +57,13 @@ MongoClient.connect("mongodb://test123:test123@ds245532.mlab.com:45532/tests", f
           if(result===0){
                 console.log(result);
                
+               
          }else{
-                console.log("Welcome")
-
-              }
-        
-        
-        
-        
+              
+             
+          }
         });
 
-
-
-       
-
-
-       
-    
-       
-      
-      
       });
 
     

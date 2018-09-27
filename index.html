@@ -117,10 +117,10 @@
                                 <img src="assets/images/eyeshadow/naked.jpg" class="setimage">
                             </div>
                             <p class="time" id="time1">00:00</p>
-                            <p class="time1">URBAN DECAY</p>
+                            <p class="time1" id="namepro">URBAN DECAY</p>
                             <p class="time2">Experiment with 12 NEVER-BEFORE-SEEN rose-hued neutrals from pale.</p>
-                            <p class="time1">20 THB</p>
-                            <a href="detail.html" class="btn btn-default"><i class="fa fa-gavel"></i></a>
+                            <p class="time1" id="num" >20 THB</p>
+                            <a href="detail.html" class="btn btn-default" id="detail" onclick="go('URBAN DECAY')"><i class="fa fa-gavel"></i></a>
                         </div>
                         <div class="col-md-3">
                             <div class="single_mixi_portfolio">
@@ -128,10 +128,10 @@
 
                             </div>
                             <p class="time" id="time2">00:00</p>
-                            <p class="time1">3CE</p>
+                            <p class="time1" id="namepro">3CE</p>
                             <p class="time2">A matte-type lipstick with creamy appilcation.</p>
                             <p class="time1">10 THB</p>
-                            <a href="detail.html" class="btn btn-default"><i class="fa fa-gavel"></i></a>
+                            <a href="detail.html" class="btn btn-default"  onclick="go('3CE')"><i class="fa fa-gavel"></i></a>
                         </div>
                         <div class="col-md-3">
                             <div class="single_mixi_portfolio">
@@ -471,8 +471,9 @@
 
     <script src="assets/js/jquery.easing.1.3.js"></script>
     <script src="assets/js/masonry/masonry.min.js"></script>
-    <script src="assets/js/time.js"></script>
-   
+   <script src="assets/js/time.js"></script>
+    <script src="./detail.js"></script>
+    <script src="./api.js"></script>
    <script type="text/javascript">
         $('.mixcontent').masonry();
     </script>
@@ -511,7 +512,7 @@
                 "password":passup,
                 "email":emailup
                }
-               alert("SIGN UP OK"); 
+               
               var user = document.getElementById("userup").innerHTML='';
               var passup = document.getElementById("passup").innerHTML='';
               var cpassup = document.getElementById("cpassup").innerHTML='';
@@ -520,6 +521,11 @@
            }else{
               alert("Passwords do not match");
            }
+        }
+        function go(text){
+            var yourValue = text 
+            window.open('./detail.html?' + yourValue);
+
         }
 
      </script>
