@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Cuties</title>
+    <title id="title">Cuties</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -128,9 +128,9 @@
                             </div>
                             <p class="time" id="time1">00:00</p>
                             <p class="time1" id="namepro">URBAN DECAY</p>
-                            <p class="time2">Experiment with 12 NEVER-BEFORE-SEEN rose-hued neutrals from pale.</p>
+                            <p class="time2" id="data">Experiment with 12 NEVER-BEFORE-SEEN rose-hued neutrals from pale.</p>
                             <p class="time1" id="num" >20 THB</p>
-                            <a href="detail.html" class="btn btn-default" id="detail" onclick="go('URBAN DECAY')"><i class="fa fa-gavel"></i></a>
+                            <a  class="btn btn-default" id="detail" onclick="go1('URBAN DECAY')"><i class="fa fa-gavel"></i></a>
                         </div>
                         <div class="col-md-3">
                             <div class="single_mixi_portfolio">
@@ -138,10 +138,10 @@
 
                             </div>
                             <p class="time" id="time2">00:00</p>
-                            <p class="time1" id="namepro">3CE</p>
-                            <p class="time2">A matte-type lipstick with creamy appilcation.</p>
-                            <p class="time1">10 THB</p>
-                            <a href="detail.html" class="btn btn-default"  onclick="go('3CE')"><i class="fa fa-gavel"></i></a>
+                            <p class="time1" id="namepro2">3CE</p>
+                            <p class="time2"  id="data2">A matte-type lipstick with creamy appilcation.</p>
+                            <p class="time1"id="num2">10 THB</p>
+                            <a class="btn btn-default"  onclick="go2('3CE')"><i class="fa fa-gavel"></i></a>
                         </div>
                         <div class="col-md-3">
                             <div class="single_mixi_portfolio">
@@ -149,10 +149,10 @@
 
                             </div>
                             <p class="time" id="time3">00:00</p>
-                            <p class="time1">TOO FACED</p>
-                            <p class="time2">Baked heart-shaped blush contains three individual color.</p>
-                            <p class="time1">250 THB</p>
-                            <a href="detail.html" class="btn btn-default"><i class="fa fa-gavel"></i></a>
+                            <p class="time1" id="namepro3">TOO FACED</p>
+                            <p class="time2"  id="data3">Baked heart-shaped blush contains three individual color.</p>
+                            <p class="time1" id="num3">250 THB</p>
+                            <a  class="btn btn-default"  onclick="go3('TOO FACED')"><i class="fa fa-gavel"></i></a>
                         </div>
                         <div class="col-md-3">
                             <div class="single_mixi_portfolio">
@@ -160,10 +160,10 @@
 
                             </div>
                             <p class="time" id="time4">00:00</p>
-                            <p class="time1">BOBBI BROWN</p>
-                            <p class="time2">Skin long-wear weighless foundation SPF 15, A 16-hour wear.</p>
-                            <p class="time1">100 THB</p>
-                            <a href="detail.html" class="btn btn-default"><i class="fa fa-gavel"></i> </a>
+                            <p class="time1" id="namepro4">BOBBI BROWN</p>
+                            <p class="time2"  id="data4">Skin long-wear weighless foundation SPF 15, A 16-hour wear.</p>
+                            <p class="time1"  id="num4">100 THB</p>
+                            <a  class="btn btn-default" onclick="go4('BOBBI BROWN')"><i class="fa fa-gavel"></i> </a>
                         </div>
                     </div>
                     <div class="head_title text-center">
@@ -533,8 +533,33 @@
               alert("Passwords do not match");
            }
         }
-        function go(text){
-            var yourValue = text 
+        function go1(text){
+            var index = $("#data").text()
+            var index2 = $("#num").text()
+            
+            var yourValue = text+" "+index+" "+index2;
+            var data =[index,index2] 
+            window.open('./detail.html?' +yourValue);
+
+        }
+        function go2(text){
+            var index = $("#data2").text()
+            var index2 = $("#num2").text()
+            var yourValue = text+" "+" "+index+" "+index2; 
+            window.open('./detail.html?' + yourValue);
+
+        }
+        function go3(text){
+            var index = $("#data3").text()
+            var index2 = $("#num3").text()
+            var yourValue = text+" "+index+" "+index2;  
+            window.open('./detail.html?' + yourValue);
+
+        }
+        function go4(text){
+            var index = $("#data4").text()
+            var index2 = $("#num4").text()
+            var yourValue = text+" "+index+" "+index2;  
             window.open('./detail.html?' + yourValue);
 
         }

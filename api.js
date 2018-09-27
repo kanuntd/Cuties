@@ -58,11 +58,11 @@ MongoClient.connect("mongodb://test123:test123@ds245532.mlab.com:45532/tests", f
            throw err;
          }
           if(result===0){
-                console.log(result);
+            res.render(alert("NOOO"));
                
                
          }else{
-              
+                res.render('index.html');
              
           }
         });

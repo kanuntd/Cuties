@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Bobbi brown</title>
+    <title id="title">Bobbi brown</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -122,7 +122,7 @@
                 <strong>
                     <p class="detail" id="nameproduct">BOBBI BROWN</p>
                 </strong><br>
-                <p class="dtime2">Skin long-wear weighless foundation SPF 15, A 16-hour wear.</p>
+                <p class="dtime2" id="data">Skin long-wear weighless foundation SPF 15, A 16-hour wear.</p>
                 <p class="dtime" id="time1"><i class="fas fa-stopwatch"></i> 00:00</p>
                 <p class="dtime1"><i class="fa fa-trophy"></i> Current Winner: Kanun</p>
                 <p class="dtime1" id="sum">20</p>
@@ -228,11 +228,26 @@
             var query = location.search.substring(1);
             var keyValues = query.split(/%20/);
             var index1='';
+            var index2='';
+            var index3='';
             for( i=0;i<keyValues.length;i++){
-               index1 +=keyValues[i]+" "
+               
+               
+                if(i<2){
+                    index1 +=keyValues[i]+" "
+                }if(i>=2&&i<keyValues.length-2) {
+                  index2 +=keyValues[i]+" "  
+                }if(i>=keyValues.length-2){
+                    index3 +=keyValues[i]+" "
+                }
+               
             }
 
             $("#nameproduct").text(index1)
+            $("#data").text(index2)
+            $("#sum").text(index3)
+            $("#title").text(index1)
+
             
             function s() {
                 var num = document.getElementById("push").value
