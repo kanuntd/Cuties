@@ -23,6 +23,8 @@ MongoClient.connect("mongodb://test123:test123@ds245532.mlab.com:45532/tests", f
                password:req.query.passwordup,
                email:req.query.email
             };
+            
+
 
             // register 
             var query = {user:req.query.usernameup};
@@ -46,6 +48,7 @@ MongoClient.connect("mongodb://test123:test123@ds245532.mlab.com:45532/tests", f
           });
         //
         app.get('/login',function(req,res){
+        
         /*รับค่าจาก index. html ไว้ใน data*/
         dataq={
            user:req.query.user 
