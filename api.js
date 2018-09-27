@@ -58,16 +58,38 @@ MongoClient.connect("mongodb://test123:test123@ds245532.mlab.com:45532/tests", f
            throw err;
          }
           if(result===0){
-            res.render(alert("NOOO"));
+          console.log("0000")
+               function gets(){
+                  alert("No")
+               }
                
                
-         }else{
-                res.render('index.html');
-             
+         }else{      
+          console.log("11111") 
           }
         });
 
       });
+
+      app.get('/aboutus',function(req,res){
+
+          
+        dataq={
+           user:req.query.name,
+           password:req.query.email,
+           email:req.query.message
+        };
+          console.log(req.query.name)
+           dbo.collection("User").insertOne(dataq, function(err, res) {
+              if (err) throw err;
+               console.log("Ok");
+              
+            });
+         
+       
+       
+      });
+
 
     
 
