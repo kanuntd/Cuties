@@ -31,7 +31,7 @@
 
     <!--Theme Responsive css-->
     <link rel="stylesheet" href="assets/css/responsive.css" />
-    <script type="text/javascript" src="./assets/json/data.json"></script>
+
 
 
 
@@ -88,7 +88,7 @@
                                                 <li><a href="service1.html">auctions lost</a></li>
                                             </ul>
                                         </li>
-                                        <li><a  id="profile"><i class="fa fa-user"></i>profile</a></li>
+                                        <li><a id="profile"><i class="fa fa-user"></i></a></li>
                                     </ul>
                                 </div>
 
@@ -127,11 +127,12 @@
                                 <img src="assets/images/eyeshadow/naked.jpg" class="setimage">
                             </div>
                             <p class="time" id="time1">00:00</p>
+                            <p> </p>
                             <p class="time1" id="namepro">URBAN DECAY</p>
                             <p class="time2" id="data">Experiment with 12 NEVER-BEFORE-SEEN rose-hued neutrals from
                                 pale.</p>
                             <p class="time1" id="num">20 THB</p>
-                            <a class="btn btn-default" id="detail" onclick="go1('URBAN DECAY')"><i class="fa fa-gavel"></i></a>
+                            <a class="btn btn-default" id="detail" onclick="go1('URBAN DECAY','assets/images/eyeshadow/naked.jpg')"><i class="fa fa-gavel"></i></a>
                         </div>
                         <div class="col-md-3">
                             <div class="single_mixi_portfolio">
@@ -139,10 +140,11 @@
 
                             </div>
                             <p class="time" id="time2">00:00</p>
+
                             <p class="time1" id="namepro2">3CE</p>
                             <p class="time2" id="data2">A matte-type lipstick with creamy appilcation.</p>
                             <p class="time1" id="num2">10 THB</p>
-                            <a class="btn btn-default" onclick="go2('3CE')"><i class="fa fa-gavel"></i></a>
+                            <a class="btn btn-default" onclick="go2('3CE .','assets/images/lip/3ce.jpg')"><i class="fa fa-gavel"></i></a>
                         </div>
                         <div class="col-md-3">
                             <div class="single_mixi_portfolio">
@@ -153,7 +155,7 @@
                             <p class="time1" id="namepro3">TOO FACED</p>
                             <p class="time2" id="data3">Baked heart-shaped blush contains three individual color.</p>
                             <p class="time1" id="num3">250 THB</p>
-                            <a class="btn btn-default" onclick="go3('TOO FACED')"><i class="fa fa-gavel"></i></a>
+                            <a class="btn btn-default" onclick="go3('TOO FACED','assets/images/blush/toofaced.jpg')"><i class="fa fa-gavel"></i></a>
                         </div>
                         <div class="col-md-3">
                             <div class="single_mixi_portfolio">
@@ -164,7 +166,7 @@
                             <p class="time1" id="namepro4">BOBBI BROWN</p>
                             <p class="time2" id="data4">Skin long-wear weighless foundation SPF 15, A 16-hour wear.</p>
                             <p class="time1" id="num4">100 THB</p>
-                            <a class="btn btn-default" onclick="go4('BOBBI BROWN')"><i class="fa fa-gavel"></i> </a>
+                            <a class="btn btn-default" onclick="go4('BOBBI BROWN','assets/images/foundation/bobbibrown.JPG')"><i class="fa fa-gavel"></i> </a>
                         </div>
                     </div>
                     <div class="head_title text-center">
@@ -403,78 +405,6 @@
         </div><!-- End of container -->
     </footer><!-- End of footer -->
 
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="login-wrap">
-                <div class="login-html">
-                    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign
-                        In</label>
-                    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
-                    <div class="login-form">
-                        <form action="/login" method="GET">
-                        <div class="sign-in-htm">
-                           
-                            <div class="group">
-                                <br>
-                                <label for="user" class="label">Username</label>
-                                <input id="user" type="text" class="input" name="user">
-                            </div>
-                            <div class="group">
-                                <label for="pass" class="label" id="password">Password</label>
-                                <input id="pass" type="password" class="input" data-type="password" name="passwordlogin">
-                            </div>
-                            <div class="group">
-                                <input id="check" type="checkbox" class="check" checked>
-                                <label for="check"><span class="icon"></span> Keep me Signed in</label>
-                            </div>
-                            <div class="group">
-                                <input id="login" type="submit" class="button" onclick="logins()" value="Sign in">
-                            </div>
-
-                            <div class="hr"></div>
-                            <div class="foot-lnk">
-                                <a href="#forgot">Forgot Password?</a>
-                            </div>
-
-
-                        </div>
-                    </form> 
-                        <div class="sign-up-htm">
-
-                            <div class="group">
-                                <br>
-                                <label for="user" class="label">Username</label>
-                                <input id="userup" name="usernameup" type="text" class="input" required>
-                            </div>
-
-                            <div class="group">
-                                <label for="pass" class="label">Password</label>
-                                <input id="passup" type="password" name="passwordup" class="input" data-type="password">
-                            </div>
-                            <div class="group">
-                                <label for="pass" class="label">Repeat Password</label>
-                                <input id="cpassup" type="password" class="input" data-type="password">
-                            </div>
-                            <div class="group">
-                                <label for="pass" class="label">Email Address</label>
-                                <input id="emailup" type="text" name="email" class="input">
-                            </div>
-                            <div class="group">
-                                <button id="register" class="button" onclick="registers()" value="Sign Up">Sign Up</button>
-                            </div>
-                            <div class="hr"></div>
-                            <div class="foot-lnk">
-                                <label for="tab-1">Already Member?</label>
-                            </div>
-
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
     <!-- START SCROLL TO TOP  -->
@@ -494,61 +424,34 @@
     <script type="text/javascript">
         $('.mixcontent').masonry();
     </script>
-    <script>
-        $(document).ready(function () {
-            $('#myModal').modal('show');
-        });
-
-
-
-    </script>
 
     <script>
 
 
-
-        function logins() {
-          
-        }
-
-
-        function registers() {
-
-            var user = document.getElementById("userup").value;
-            var passup = document.getElementById("passup").value;
-            var cpassup = document.getElementById("cpassup").value;
-            var emailup = document.getElementById("emailup").value;
-            if (passup === cpassup) {
-
-                var datauser = [
-                    {
-                        "username": user,
-                        "password": passup,
-                        "email": emailup
-                    }
-                ]
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function () {
-                    if (this.readyState == 4 && this.status == 200) {
-                        console.log(this.responseText)
-                        var res = this.responseText
-                        if (res == 'Success') {
-                            alert("Register Success")
-
-                        }
-                    }
-                };
-                xmlhttp.open("POST", "http://localhost:8000");
-                xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-                xmlhttp.send(JSON.stringify(datauser));
+        var query = location.search.substring(1);
+        var keyValues = query.split(/%20/);
+        var index1 = '';
 
 
 
-            } else {
-                alert("Passwords do not match");
-            }
-        }
-        function go1(text) {
+       
+       index1 += keyValues[0] + " "
+        $("#profile").text(index1)
+
+
+
+
+        var usertest = '';
+        var passtest = '';
+        $.get('http://127.0.0.1:8000/user', {}, function (data) {
+            var user = data;
+
+            console.log(user)
+        })
+
+
+
+         function go1(text,text2) {
             var txt = $('#profile').text()
             console.log(txt);
             if (txt === 'profile') {
@@ -561,7 +464,7 @@
                 var index = $("#data").text()
                 var index2 = $("#num").text()
 
-                var yourValue = text + " " + index + " " + index2;
+                var yourValue = text2+" "+text + " " + index + " " + index2;
                 var data = [index, index2]
                 window.open('./detail.html?' + yourValue);
             }
@@ -569,7 +472,7 @@
 
 
         }
-        function go2(text) {
+        function go2(text,text2) {
             var txt = $('#profile').text()
             console.log(txt);
             if (txt === 'profile') {
@@ -581,11 +484,11 @@
             } else {
                 var index = $("#data2").text()
                 var index2 = $("#num2").text()
-                var yourValue = text + " " + " " + index + " " + index2;
+                var yourValue = text2+" "+text + " " + index + " " + index2;
                 window.open('./detail.html?' + yourValue);
             }
         }
-        function go3(text) {
+        function go3(text,text2) {
             var txt = $('#profile').text()
             console.log(txt);
             if (txt === 'profile') {
@@ -597,11 +500,11 @@
             } else {
                 var index = $("#data3").text()
                 var index2 = $("#num3").text()
-                var yourValue = text + " " + index + " " + index2;
+                var yourValue = text2+" "+text + " " + index + " " + index2;
                 window.open('./detail.html?' + yourValue);
             }
         }
-        function go4(text) {
+        function go4(text,text2) {
             var txt = $('#profile').text()
             console.log(txt);
             if (txt === 'profile') {
@@ -613,10 +516,11 @@
             } else {
                 var index = $("#data4").text()
                 var index2 = $("#num4").text()
-                var yourValue = text + " " + index + " " + index2;
+                var yourValue = text2+" "+text + " " + index + " " + index2;
                 window.open('./detail.html?' + yourValue);
             }
         }
+
 
     </script>
 

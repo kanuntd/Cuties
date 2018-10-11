@@ -76,13 +76,7 @@
                                                 <li><a href="service1.html">auctions lost</a></li>
                                             </ul>
                                         </li>
-                                        <li class="dropdown"><a  class="dropdown-toggle" id="profile" data-toggle="dropdown"
-                                            role="button" aria-haspopup="true"><i class="fa fa-user"></i> profile</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="index.html">logout</a></li>
-                                           
-                                        </ul>
-                                    </li>
+                                        <li><a href="profile.html"><i class="fa fa-user"></i> profile</a></li>
                                     </ul>
                                 </div>
 
@@ -267,21 +261,21 @@
 
                                             <div class="form-group">
                                                 <label>name</label>
-                                                <input type="text" class="form-control" name="name" required="">
+                                                <input type="text" class="form-control" name="name" id="neme" required="">
                                             </div>
 
                                             <div class="form-group">
                                                 <label>e-mail</label>
-                                                <input type="email" class="form-control" name="email" required="">
+                                                <input type="email" class="form-control" name="email" id="email" required="">
                                             </div>
 
                                             <div class="form-group">
                                                 <label>your message</label>
-                                                <textarea class="form-control" name="message" rows="8"></textarea>
+                                                <textarea class="form-control" name="message" rows="8" id="message"></textarea>
                                             </div>
 
                                             <div class="">
-                                                <input type="submit" value="submit"  class="btn1 btn-default1">
+                                                <input type="submit" value="submit" onclick="send()" class="btn1 btn-default1">
                                             </div>
                                             <!--</div>-->
                                         </form>
@@ -332,6 +326,44 @@
     <script type="text/javascript">
         $('.mixcontent').masonry();
     </script>
+   <script>
+         function send(){
+            var user = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+            
+            if (passup === cpassup) {
+
+                var datauser = [
+                    {
+                        "username": user,
+                        "email": email,
+                        "message":message 
+                    }
+                ]
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        console.log(this.responseText)
+                        var res = this.responseText
+                        if (res == 'ok') {
+                            alert("Register Success")
+                        }
+                    }
+                };
+                xmlhttp.open("GET", "http://localhost:8000/aboutus.html");
+                xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+                xmlhttp.send(JSON.stringify(datauser));
+
+
+
+            } else {
+                alert("Passwords do not match");
+            }
+   
+        }
+   </script>
+
 
     <script src="assets/js/jquery.sliderPro.min.js"></script>
     <script type="text/javascript">
