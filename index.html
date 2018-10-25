@@ -88,8 +88,19 @@
                                                 <li><a href="service1.html">auctions lost</a></li>
                                             </ul>
                                         </li>
+<<<<<<< HEAD
                                         <li><a id="profile"><i class="fa fa-user"></i>profile</a></li>
                                     </ul>
+=======
+                                        <li class="dropdown"><a  class="dropdown-toggle" id="profile" data-toggle="dropdown"
+                                            role="button" aria-haspopup="true"><i class="fa fa-user"></i> profile</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="index.html">logout</a></li>
+                                           
+                                        </ul>
+                                    </li>
+                                        
+>>>>>>> bb0d09b8703827d72959958d198bc93b45a1a777
                                 </div>
 
                             </div>
@@ -162,9 +173,15 @@
                             </div>
                             <p class="time" id="time4">00:00</p>
                             <p class="time1" id="namepro4">BOBBI BROWN</p>
+<<<<<<< HEAD
                             <p class="time2" id="data4">Skin long-wear weighless foundation SPF 15, A 16-hour wear.</p>
                             <p class="time1" id="num4">100 THB</p>
                             <a class="btn btn-default" onclick="go4('BOBBI BROWN')"><i class="fa fa-gavel"></i> </a>
+=======
+                            <p class="time2"  id="data4">Skin long-wear weighless foundation SPF 15, A 16-hour wear.</p>
+                            <p class="time1"  id="num4">20 THB</p>
+                            <a  class="btn btn-default" onclick="go4('BOBBI BROWN')"><i class="fa fa-gavel"></i> </a>
+>>>>>>> bb0d09b8703827d72959958d198bc93b45a1a777
                         </div>
                     </div>
                     <div class="head_title text-center">
@@ -507,6 +524,38 @@
                 $('#myModal').modal('hide');
             }
 
+<<<<<<< HEAD
+=======
+            function registers(){
+           var user = document.getElementById("userup").value;
+           var passup = document.getElementById("passup").value;
+           var cpassup = document.getElementById("cpassup").value;
+           var emailup = document.getElementById("emailup").value;
+   
+          if(passup===cpassup){
+              var data ={
+                "name":user,
+                "password":passup,
+                "email":emailup
+               }
+               
+              var user = document.getElementById("userup").innerHTML='';
+              var passup = document.getElementById("passup").innerHTML='';
+              var cpassup = document.getElementById("cpassup").innerHTML='';
+              var emailup = document.getElementById("emailup").innerHTML='';
+             
+           }else{
+              alert("Passwords do not match");
+           }
+        }
+        function go1(text){
+            var index = $("#data").text()
+            var index2 = $("#num").text()
+            var index3 = $('#profile').text()
+            var yourValue = text+" "+index+" "+index2;
+            var data =[index,index2] 
+            window.open('./detail.html?' +yourValue);
+>>>>>>> bb0d09b8703827d72959958d198bc93b45a1a777
 
         });
 
