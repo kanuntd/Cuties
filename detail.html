@@ -113,7 +113,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="single_mixi_portfolio">
-                    <img src="assets/images/foundation/bobbibrown.JPG" class="setimage1">
+                    <img src="assets/images/foundation/bobbibrown.JPG"  class="setimage1" id="imageid">
                 </div>
 
 
@@ -227,27 +227,31 @@
          
             var query = location.search.substring(1);
             var keyValues = query.split(/%20/);
+            var index0='';
             var index1='';
             var index2='';
             var index3='';
             for( i=0;i<keyValues.length;i++){
                
-               
-                if(i<2){
+                 if(i==0){
+                     index0+=keyValues[i]+" "
+                 }
+                if(i>0&&i<3){
                     index1 +=keyValues[i]+" "
-                }if(i>=2&&i<keyValues.length-2) {
+                }if(i>=3&&i<keyValues.length-2) {
                   index2 +=keyValues[i]+" "  
                 }if(i>=keyValues.length-2){
                     index3 +=keyValues[i]+" "
                 }
                
             }
-
+            
             $("#nameproduct").text(index1)
             $("#data").text(index2)
             $("#sum").text(index3)
             $("#title").text(index1)
-
+          
+            document.getElementById("imageid").src="./"+index0;
             
             function s() {
                 var num = document.getElementById("push").value
