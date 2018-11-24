@@ -54,8 +54,8 @@
                             <div class="container-fluid">
                                 <!-- Brand and toggle get grouped for better mobile display -->
                                 <div class="navbar-header">
-                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-                                        aria-expanded="false">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                                         <span class="sr-only">Toggle navigation</span>
                                         <span class="icon-bar"></span>
                                         <span class="icon-bar"></span>
@@ -88,12 +88,12 @@
                                                 <li><a href="service1.html">auctions lost</a></li>
                                             </ul>
                                         </li>
-                                        <li class="dropdown"><a  class="dropdown-toggle" id="profile" data-toggle="dropdown"
-                                            role="button" aria-haspopup="true"><i class="fa fa-user"></i> profile</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="index.html">logout</a></li>
-                                           
-                                        </ul>
+                                        <li class="dropdown"><a class="dropdown-toggle" id="profile" data-toggle="dropdown"
+                                                role="button" aria-haspopup="true"><i class="fa fa-user"></i> profile</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="index.html">logout</a></li>
+
+                                            </ul>
                                     </ul>
                                 </div>
 
@@ -118,7 +118,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="single_mixi_portfolio">
-                    <img src="assets/images/foundation/bobbibrown.JPG"  class="setimage1" id="imageid">
+                    <img src="assets/images/foundation/bobbibrown.JPG" class="setimage1" id="imageid">
                 </div>
 
 
@@ -129,12 +129,13 @@
                 </strong><br>
                 <p class="dtime2" id="data">Skin long-wear weighless foundation SPF 15, A 16-hour wear.</p>
                 <p class="dtime" id="time1"><i class="fas fa-stopwatch"></i> 00:00</p>
-                <p class="dtime1"><i class="fa fa-trophy"></i> Current Winner: Kanun</p>
-                <p class="dtime1" id="sum">20</p>
+                <p class="dtime1" id="user"><i class="fa fa-trophy"></i> </p>
+                <p class="dtime1" type="number" id="sum" value=""> </p>
+
                 <p class="dtime1">Place Youe Bid:</p>
                 <div class="quantity">
-                    <input type="number" id="push" step="1" value="20">
-                    <a class="btn btn-default" onclick='s()'><i class="fa fa-gavel"></i></a>
+                    <input type="number" id="push" step="1" value="0">
+                    <a class="btn btn-default" onclick='push()'><i class="fa fa-gavel"></i></a>
                 </div>
 
 
@@ -221,50 +222,122 @@
         <script type="text/javascript">
             $('.mixcontent').masonry();
         </script>
+        <script >
+            setInterval(function(){
+               window.location.reload(1);
+            }, 20000);
+            </script>
         <script>
             $(document).ready(function () {
-                $('#myModal').modal('show');
+                formData = {
+                    product: $("#nameproduct").text()
+                }
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json",
+                    data:JSON.stringify(formData),
+                    url: "http://localhost:8000/api/customers/changeStream",
+                    dataType: 'json',
+                    success: function (res) {
+                        console.log(res.user)
+                        $("#user").text(res.user)
+                        $("#sum").text(res.num)
+                        console.log(res.user +" "+ res.num);  
+                    },
+                    error: function (e) {
+                        console.log("ERROR: ", e);
+                    }
+                });
             });
-
+          
+        
         </script>
         <script>
+           
 
-         
             var query = location.search.substring(1);
             var keyValues = query.split(/%20/);
-            var index0='';
-            var index1='';
-            var index2='';
-            var index3='';
-            for( i=0;i<keyValues.length;i++){
-               
-                 if(i==0){
-                     index0+=keyValues[i]+" "
-                 }
-                if(i>0&&i<3){
-                    index1 +=keyValues[i]+" "
-                }if(i>=3&&i<keyValues.length-2) {
-                  index2 +=keyValues[i]+" "  
-                }if(i>=keyValues.length-2){
-                    index3 +=keyValues[i]+" "
-                }
-               
-            }
-            
-            $("#nameproduct").text(index1)
-            $("#data").text(index2)
-            $("#sum").text(index3)
-            $("#title").text(index1)
-          
-            document.getElementById("imageid").src="./"+index0;
-            
-            function s() {
-                var num = document.getElementById("push").value
-                var tx = $("#sum").text()
-                $("#push").text('20')
-                var sum = num + tx;
+            var index0 = '';
+            var index1 = '';
+            var index2 = '';
+            var index3 = '';
+            var profile = '';
+            var img = ''
+            console.log(keyValues)
+            for (i = 0; i < keyValues.length; i++) {
 
-                $("#sum").text(num)
+                if (i < 2) {
+                    index0 += keyValues[i] + " "
+                    console.log(index0)
+                }
+                if (i == 2) {
+                    img = keyValues[i] + " "
+                    console.log(img)
+                }
+                if (i > 2 && i < keyValues.length - 3) {
+                    index1 += keyValues[i] + " "
+                    console.log(index1)
+                } if (i == keyValues.length - 3) {
+                    index2 = keyValues[i] + " "
+                    console.log(index2)
+                } if (i == keyValues.length - 2) {
+                    index3 = keyValues[i] + " "
+                    console.log(index3)
+                } if (i == keyValues.length - 1) {
+                    profile = keyValues[i]
+                    console.log(profile)
+                }
+
+            }
+
+            $("#nameproduct").text(index0)
+            $("#data").text(index1)
+            $("#profile").text(profile)
+            $("#title").text(index0)
+            $("#user").text("Current Winner: " + profile)
+            document.getElementById("imageid").src = "./" + img;
+            $("#sum").text(index2 + " " + index3)
+
+            function push() {
+                var num = document.getElementById("push").value
+
+                var s = $("#sum").text()
+
+                var nu = parseInt(s)
+                var int = parseInt(num)
+                var sum = nu + int
+                $("#sum").text(sum + " THB")
+                $('#push').val('0')
+                formData = {
+                    user: "Current Winner: " +$("#profile").text(),
+                    num: $('#sum').text(),
+                    product: $("#nameproduct").text()
+                }
+                console.log(formData.product)
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json",
+                    url: "http://localhost:8000/api/customers/auction",
+                    data: JSON.stringify(formData),
+                    dataType: 'json',
+                    success: function (customer) {
+                        var result = JSON.stringify(customer);
+                        console.log(result);
+
+                        if (JSON.stringify(customer) == 'true') {
+                            alert("Auction Successful!")
+                            location.reload();
+                        } else {
+                            alert("Auction Incorrect!")
+                            location.reload();
+                            
+                        }
+                    },
+                    error: function (e) {
+                        console.log("ERROR: ", e);
+                    }
+                });
+
             }
 
 

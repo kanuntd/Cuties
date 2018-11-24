@@ -149,82 +149,7 @@
 
 
 
-    <!-- Team Section -->
-    <section id="team" class="team colorsbg sections">
-        <div class="container">
-            <div class="row">
-                <div class="main_team_area">
-                    <div class="head_title text-center">
-                        <h1>best team</h1>
-                    </div><!-- End of head title -->
-                    <div class="main_team text-center">
-                        <div class="single_team">
-                            <div class="col-sm-10 col-sm-offset-1">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <div class="team">
-                                            <img class="img-circle" src="assets/images/team1.jpg" alt="" />
-                                            <h4>Natthanan Kongkunlaya</h4>
-                                            <div class="separator"></div>
-                                            <p>User Interface</p>
-                                        </div>
-                                    </div><!-- End of col-sm-4 -->
-                                    <div class="col-sm-4">
-                                        <div class="team">
-                                            <img class="img-circle" src="assets/images/team2.jpg" alt="" />
-                                            <h4>Waranyu Seesuan</h4>
-                                            <div class="separator"></div>
-                                            <p>Programmer</p>
-                                        </div>
-                                    </div> <!-- End of col-sm-4 -->
-                                    <div class="col-sm-4">
-                                        <div class="team">
-                                            <img class="img-circle" src="assets/images/team3.jpg" alt="" />
-                                            <h4>Apisit Kongdee</h4>
-                                            <div class="separator"></div>
-                                            <p>Programmer</p>
-                                        </div>
-                                    </div> <!-- End of col-sm-4 -->
-                                </div>
-                            </div><!-- End of col-sm-10 -->
-                        </div>
-                        
-                        <div class="single_team">
-                            <div class="col-sm-10 col-sm-offset-1">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <div class="team">
-                                            <img class="img-circle" src="assets/images/team1.jpg" alt="" />
-                                            <h4>Natthanan Kongkunlaya</h4>
-                                            <div class="separator"></div>
-                                            <p>User Interface</p>
-                                        </div>
-                                    </div><!-- End of col-sm-4 -->
-                                    <div class="col-sm-4">
-                                        <div class="team">
-                                            <img class="img-circle" src="assets/images/team2.jpg" alt="" />
-                                            <h4>Waranyu Seesuan</h4>
-                                            <div class="separator"></div>
-                                            <p>Programmer</p>
-                                        </div>
-                                    </div> <!-- End of col-sm-4 -->
-                                    <div class="col-sm-4">
-                                        <div class="team">
-                                            <img class="img-circle" src="assets/images/team3.jpg" alt="" />
-                                            <h4>Apisit Kongdee</h4>
-                                            <div class="separator"></div>
-                                            <p>Programmer</p>
-                                        </div>
-                                    </div> <!-- End of col-sm-4 -->
-                                </div>
-                            </div><!-- End of col-sm-10 -->
-                        </div>
-                    </div>
-                </div>
-            </div><!-- End of row -->
-        </div><!-- End of Container -->
-    </section><!-- End of counter Section -->
-
+   
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -262,12 +187,12 @@
 
                                 <div class="col-sm-6 col-xs-12">
                                     <div class="single_contant_left margin-top-60">
-                                        <form action="/aboutus" id="formid" method="GET">
+                                        <form action="/aboutus" id="summitContact">
                                             <!--<div class="col-lg-8 col-md-8 col-sm-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">-->
 
                                             <div class="form-group">
                                                 <label>name</label>
-                                                <input type="text" class="form-control" name="name" id="neme" required="">
+                                                <input type="text" class="form-control" name="name" id="user" required="">
                                             </div>
 
                                             <div class="form-group">
@@ -281,7 +206,7 @@
                                             </div>
 
                                             <div class="">
-                                                <input type="submit" value="submit" onclick="send()" class="btn1 btn-default1">
+                                                <button id="contact" class="btn btn-default" >Send</button>
                                             </div>
                                             <!--</div>-->
                                         </form>
@@ -333,41 +258,67 @@
         $('.mixcontent').masonry();
     </script>
    <script>
-         function send(){
-            var user = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            var message = document.getElementById("message").value;
-            
-            if (passup === cpassup) {
 
-                var datauser = [
+      $("#summitContact").submit(function (event) {
+                event.preventDefault();
+                send();
+            });
+         
+         function send(){
+            var user = $("#user").text()
+            var email = $("#email").text();
+            var message = $("#message").text();
+        
+                var datauser = 
                     {
-                        "username": user,
+                        "user": user,
                         "email": email,
                         "message":message 
                     }
-                ]
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function () {
-                    if (this.readyState == 4 && this.status == 200) {
-                        console.log(this.responseText)
-                        var res = this.responseText
-                        if (res == 'ok') {
-                            alert("Register Success")
+
+                    console.log($("#user").val());
+                    console.log($("#email").val());
+                    console.log($("#message").val());
+                    $.ajax({
+                        type: "POST",
+                        contentType: "application/json",
+                        url: "http://localhost:8000/api/customers/contact",
+                        data: JSON.stringify(datauser),
+                        dataType: 'json',
+                        success: function (customer) {
+                            var result = JSON.stringify(customer);
+                            console.log(result);
+
+                            if (JSON.stringify(customer) == 'true') {
+                                alert("Successful!")
+                                clear()
+
+                            } else {
+                                alert("Incorrect!")
+                                clear()
+                            }
+                        },
+                        error: function (e) {
+                            console.log("ERROR: ", e);
                         }
-                    }
-                };
-                xmlhttp.open("GET", "http://localhost:8000/aboutus.html");
-                xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-                xmlhttp.send(JSON.stringify(datauser));
+                    });
+                   
+                } 
+             
+          function clear(){
+
+            $("#user").val("")
+            $("#email").val("")
+            $("#message").val("")
+          }
+            
+        
+
+         var query = location.search.substring(1);
+         console.log(query)
+         $('#profile').text(query)
 
 
-
-            } else {
-                alert("Passwords do not match");
-            }
-   
-        }
    </script>
 
 

@@ -3,6 +3,7 @@ body{
 	color:#000000;
 	background:#c8c8c8;
 	font:600 16px/18px 'Open Sans',sans-serif;
+	display: block;
 }
 *,:after,:before{box-sizing:border-box}
 .clearfix:after,.clearfix:before{content:'';display:table}
@@ -17,6 +18,7 @@ a{color:inherit;text-decoration:none}
 	background:url(https://i.pinimg.com/564x/4d/3a/e0/4d3ae029a9a2c903024d16a14e541203.jpg) no-repeat center;
 	background-size: cover;
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+	
 }
 .login-html{
 	width:100%;

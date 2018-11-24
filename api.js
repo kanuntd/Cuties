@@ -1,7 +1,6 @@
 var express = require('express');
 var app = express();
 var path = require('path');
-var fs = require('fs');
 var bodyParser = require('body-parser')
 var router = express.Router();
 
@@ -15,7 +14,9 @@ router.use(function (req, res, next) {
   console.log("/" + req.method);
   next();
 });
-
+MongoClient.connect('mongodb+srv://ui:ui123@ui-urkhe.gcp.mongodb.net/test?retryWrites=true',(err,db)=>{
+  console.log("connect")
+})
 app.post("/api/customers/login", function (req, res) {
   console.log('Post a Customer: ' + req.body.user);
   var customer = {};
@@ -25,32 +26,32 @@ app.post("/api/customers/login", function (req, res) {
   customers.push(customer);
 
 
-   MongoClient.connect('mongodb://test123:test123@ds245532.mlab.com:45532/tests', function (err, database) {
+MongoClient.connect('mongodb+srv://ui:ui123@ui-urkhe.gcp.mongodb.net/test?retryWrites=true', function (err, database) {
     if (err)
-       throw err
+      throw err
     console.log('Connected to MongoDB')
-    var dbo = database.db("tests");
+    var dbo = database.db("test");
 
-    dbo.collection("User").find(customer).count(function(err,result){
+    dbo.collection("User").find(customer).count(function (err, result) {
 
-          if(result===0){
-            
-            return res.send('false');
-            
-           }else{
-             console.log(result);
-             return res.send('true');
-           }
-         });
-   });
+      if (result === 0) {
+
+        return res.send('false');
+
+      } else {
+        console.log(result);
+        return res.send('true');
+      }
+    });
+  });
 
 
-  
-  
+
+
 });
 
 app.post("/api/customers/register", function (req, res) {
-  console.log('Post a Customer: ' + req.body.user + " " + req.body.pass );
+  console.log('Post a Customer: ' + req.body.user + " " + req.body.pass);
   var customer = {};
   customer.username = req.body.user;
   customer.password = req.body.pass;
@@ -59,99 +60,130 @@ app.post("/api/customers/register", function (req, res) {
   customers.push(customer);
 
 
-   MongoClient.connect('mongodb://test123:test123@ds245532.mlab.com:45532/tests', function (err, database) {
+  MongoClient.connect('mongodb+srv://ui:ui123@ui-urkhe.gcp.mongodb.net/test?retryWrites=true', function (err, database) {
     if (err)
-       throw err
+      throw err
     console.log('Connected to MongoDB')
-    var dbo = database.db("tests");
-    dbo.collection("User").find(customer).count(function(err,result){
-          if(result===0){
+    var dbo = database.db("test");
+    dbo.collection("User").find(customer).count(function (err, result) {
+      if (result === 0) {
+
+        dbo.collection("User").insert(customer, function (err, result) {
+          if (err) {
+            return res.send("false")
             
-            dbo.collection("User").insert(customer, function (err, result) {
-                  if (err){
+          }
 
-                  }
-                  
-                  else
-                   console.log("ok");
-                   return  res.send("true")  
-              
-                  });
- 
-           }else{
-             console.log(result);
-             return res.send('false');
-           }
-         });
-   });
+          else
+            console.log("ok");
+          return res.send("true")
+         
+        });
+
+      } else {
+        console.log(result);
+        return res.send('false');
+      }
+    });
+  });
 
 
-  
-  
+
+
 });
 
+
+app.post("/api/customers/contact", function (req, res) {
+  console.log('Post a Customer: ' + req.body.user + " " + req.body.email);
+  var customer = {};
+  customer.user = req.body.user;
+  customer.message = req.body.message;
+  customer.email = req.body.email;
+
+  customers.push(customer);
+
+
+  MongoClient.connect('mongodb+srv://ui:ui123@ui-urkhe.gcp.mongodb.net/test?retryWrites=true', function (err, database) {
+    if (err)
+      throw err
+    console.log('Connected to MongoDB')
+    var dbo = database.db("test");
+    dbo.collection("Message").insert(customer, function (err, result) {
+      if (err) {
+        return res.send("false")
+       
+      }
+
+      else
+        console.log("ok");
+       return res.send("true")
+      
+    });
+  });
+});
+
+
+app.post("/api/customers/auction", (req, res) => {
+ console.log(req.body.user +" "+ req.body.product)
+
+  MongoClient.connect('mongodb+srv://ui:ui123@ui-urkhe.gcp.mongodb.net/test?retryWrites=true', function (err, database) {
+    if (err)
+      throw err
+    console.log('Connected to MongoDB')
+
+    var dbo = database.db("test");
+
+    var customer = {
+      user: req.body.user,
+      num: req.body.num,
+      product : req.body.product
+    }
+
+    dbo.collection("auction").insert(customer, function (err, result) {
+      if (err) {
+        return res.send("false")
+      }
+
+      else
+        console.log("ok");
+        res.send('true')
+        database.close();
+    });
+   
+  });
+})
+app.post('/api/customers/changeStream',(req,res)=>{
+  console.log(req.body.product)
+  var query ={
+    product : req.body.product
+  }
+  MongoClient.connect('mongodb+srv://ui:ui123@ui-urkhe.gcp.mongodb.net/test?retryWrites=true', function (err, database) {
+    if (err)
+      throw err
+    console.log('Connected to MongoDB')
+
+    var dbo = database.db("test");
+    dbo.collection('auction').find(query).limit(1).sort({$natural:-1}).toArray((err,result)=>{
+         if(err) {
+             throw err
+          }else {
+                  console.log(result[0])
+                  return res.send(result[0])
+                  
+         }
+        
+    })
+});
+
+
+})
 
 
 app.listen(8000, () => {
-    console.log("Successs")
+  console.log("Successs")
 
 });
 
-// MongoClient.connect('mongodb://test123:test123@ds245532.mlab.com:45532/tests', function (err, database) {
-//   if (err)
-//     throw err
-//   else {
-
-//     console.log('Connected to MongoDB')
-//     app.listen(8000);
-//   }
-//   var dbo = database.db("tests"); 
-//   app.use(bodyParser.json())
-
-// app.post('/', function (req, res) {
-//       console.log(req.body)
-//       dbo.collection("User").insert(req.body, function (err, result) {
-//     if (err)
-//         res.send('Error');
-//        else
-//       res.send("Success")
-//        console.log("ok");
-
-//     });
-// });
-// app.get('/login',function(req,res){
-
-//   /*รับค่าจาก index. html ไว้ใน data*/
-//   dataq={
-//      username:req.query.user
-//   };
-//   console.log(dataq)
-//   dbo.collection("User").find(dataq).count(function(err,result){
-
-//     if(result===0){
-//           console.log("NO")
-//           database.close();
-//           res.redirect('index.html') 
-//      }else{
-//         res.redirect('user.html?'+req.query.user) 
-//         database.close();
-//      }
-//    });
-
-// });
-
-
-//  app.get('/aboutus', (req, res) => {
-
-//      console.log(req.body)
-
-//      dbo.collection("message").insertOne(req.body, function (err, result) {
-//          if (err) throw err;
-//            res.redirect('aboutus.html')
-//          database.close();
-//       });
-//      });
-// });
 
 
 

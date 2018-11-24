@@ -76,31 +76,24 @@
 
                                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                     <ul class="nav navbar-nav navbar-right">
-                                        <li><a href="aboutus.html"><i class="fa fa-info-circle"></i> about us</a></li>
+                                        <li><a id="about" onclick="about()"><i class="fa fa-info-circle"></i> about us</a></li>
                                         <li><a href="#"><i class="fa fa-shopping-cart"></i> baskets</a></li>
 
                                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"
                                                 role="button" aria-haspopup="true"><i class="fa fa-gavel"></i> my
                                                 auctions</a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="service.html">current active bids</a></li>
+                                                <li><a href="index.html">auctions won</a></li>
                                                 <li><a href="service1.html">auctions won</a></li>
                                                 <li><a href="service1.html">auctions lost</a></li>
                                             </ul>
                                         </li>
-<<<<<<< HEAD
-                                        <li><a id="profile"><i class="fa fa-user"></i>profile</a></li>
-                                    </ul>
-=======
-                                        <li class="dropdown"><a  class="dropdown-toggle" id="profile" data-toggle="dropdown"
-                                            role="button" aria-haspopup="true"><i class="fa fa-user"></i> profile</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="index.html">logout</a></li>
-                                           
-                                        </ul>
-                                    </li>
-                                        
->>>>>>> bb0d09b8703827d72959958d198bc93b45a1a777
+
+                                        <li><a id="profile" onclick="lo()"><i class="fa fa-user"></i>Login</a></li>
+                                        <li><a id="Logout" href="index.html" ><i class="fa fa-user"></i>Logout</a></li>
+
+
+
                                 </div>
 
                             </div>
@@ -135,14 +128,13 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="single_mixi_portfolio">
-                                <img src="assets/images/eyeshadow/naked.jpg" class="setimage">
+                                <img id="p1" src="assets/images/eyeshadow/naked.jpg" class="setimage">
                             </div>
                             <p class="time" id="time1">00:00</p>
                             <p class="time1" id="namepro">URBAN DECAY</p>
-                            <p class="time2" id="data">Experiment with 12 NEVER-BEFORE-SEEN rose-hued neutrals from
-                                pale.</p>
+                            <p class="time2" id="data">Experiment with 12 NEVER-BEFORE-SEEN rose-hued neutrals from pale.</p>
                             <p class="time1" id="num">20 THB</p>
-                            <a class="btn btn-default" id="detail" onclick="go1('URBAN DECAY')"><i class="fa fa-gavel"></i></a>
+                            <a class="btn btn-default" id="detail" onclick="go1('URBAN DECAY','assets/images/eyeshadow/naked.jpg')"><i class="fa fa-gavel"></i></a>
                         </div>
                         <div class="col-md-3">
                             <div class="single_mixi_portfolio">
@@ -153,7 +145,7 @@
                             <p class="time1" id="namepro2">3CE</p>
                             <p class="time2" id="data2">A matte-type lipstick with creamy appilcation.</p>
                             <p class="time1" id="num2">10 THB</p>
-                            <a class="btn btn-default" onclick="go2('3CE')"><i class="fa fa-gavel"></i></a>
+                            <a class="btn btn-default" onclick="go2('3CE ','assets/images/lip/3ce.jpg')"><i class="fa fa-gavel"></i></a>
                         </div>
                         <div class="col-md-3">
                             <div class="single_mixi_portfolio">
@@ -164,7 +156,7 @@
                             <p class="time1" id="namepro3">TOO FACED</p>
                             <p class="time2" id="data3">Baked heart-shaped blush contains three individual color.</p>
                             <p class="time1" id="num3">250 THB</p>
-                            <a class="btn btn-default" onclick="go3('TOO FACED')"><i class="fa fa-gavel"></i></a>
+                            <a class="btn btn-default" onclick="go3('TOO FACED','assets/images/blush/toofaced.jpg')"><i class="fa fa-gavel"></i></a>
                         </div>
                         <div class="col-md-3">
                             <div class="single_mixi_portfolio">
@@ -173,15 +165,11 @@
                             </div>
                             <p class="time" id="time4">00:00</p>
                             <p class="time1" id="namepro4">BOBBI BROWN</p>
-<<<<<<< HEAD
+
                             <p class="time2" id="data4">Skin long-wear weighless foundation SPF 15, A 16-hour wear.</p>
                             <p class="time1" id="num4">100 THB</p>
-                            <a class="btn btn-default" onclick="go4('BOBBI BROWN')"><i class="fa fa-gavel"></i> </a>
-=======
-                            <p class="time2"  id="data4">Skin long-wear weighless foundation SPF 15, A 16-hour wear.</p>
-                            <p class="time1"  id="num4">20 THB</p>
-                            <a  class="btn btn-default" onclick="go4('BOBBI BROWN')"><i class="fa fa-gavel"></i> </a>
->>>>>>> bb0d09b8703827d72959958d198bc93b45a1a777
+                            <a class="btn btn-default" onclick="go4('BOBBI BROWN','assets/images/foundation/bobbibrown.JPG')"><i class="fa fa-gavel"></i> </a>
+
                         </div>
                     </div>
                     <div class="head_title text-center">
@@ -449,6 +437,7 @@
                                     <input id="login" type="submit" class="button" value="Sign in">
                                 </div>
 
+
                                 <div class="hr"></div>
                                 <div class="foot-lnk">
                                     <a href="#forgot">Forgot Password?</a>
@@ -479,7 +468,7 @@
                                     <input id="emailup" type="text" name="email" class="input">
                                 </div>
                                 <div class="group">
-                                    <button id="register" class="button"  value="Sign Up">Sign Up</button>
+                                    <button id="register" class="button" value="Sign Up">Sign Up</button>
                                 </div>
                                 <div class="hr"></div>
                                 <div class="foot-lnk">
@@ -515,49 +504,35 @@
     <script type="text/javascript">
         $('.mixcontent').masonry();
     </script>
+
+
+
+
     <script>
         $(document).ready(function () {
-            var txt = $('#profile').text();
-            if (txt === 'profile') {
+            var txt = $('#profile').text(); 
+           
+            if (txt === 'Login') {
                 $('#myModal').modal('show');
+               
             } else {
                 $('#myModal').modal('hide');
             }
 
-<<<<<<< HEAD
-=======
-            function registers(){
-           var user = document.getElementById("userup").value;
-           var passup = document.getElementById("passup").value;
-           var cpassup = document.getElementById("cpassup").value;
-           var emailup = document.getElementById("emailup").value;
-   
-          if(passup===cpassup){
-              var data ={
-                "name":user,
-                "password":passup,
-                "email":emailup
-               }
-               
-              var user = document.getElementById("userup").innerHTML='';
-              var passup = document.getElementById("passup").innerHTML='';
-              var cpassup = document.getElementById("cpassup").innerHTML='';
-              var emailup = document.getElementById("emailup").innerHTML='';
-             
-           }else{
-              alert("Passwords do not match");
-           }
-        }
-        function go1(text){
-            var index = $("#data").text()
-            var index2 = $("#num").text()
-            var index3 = $('#profile').text()
-            var yourValue = text+" "+index+" "+index2;
-            var data =[index,index2] 
-            window.open('./detail.html?' +yourValue);
->>>>>>> bb0d09b8703827d72959958d198bc93b45a1a777
+
 
         });
+        function lo(){
+            var txt = $('#profile').text(); 
+           
+           if (txt === 'Login') {
+               $('#myModal').modal('show');
+              
+           } else {
+               $('#myModal').modal('hide');
+           }
+
+        }
 
 
 
@@ -582,7 +557,7 @@
                 $.ajax({
                     type: "POST",
                     contentType: "application/json",
-                    url: window.location + "api/customers/login",
+                    url: "http://localhost:8000/api/customers/login",
                     data: JSON.stringify(formData),
                     dataType: 'json',
                     success: function (customer) {
@@ -611,10 +586,10 @@
                 $("#user").val("");
                 $("#pass").val("");
                 $("#userup").val(""),
-                $("#passup").val("");
+                    $("#passup").val("");
                 $("#cpassup").val("");
                 $("#emailup").val("");
-                        
+
             }
 
 
@@ -642,16 +617,16 @@
                     $.ajax({
                         type: "POST",
                         contentType: "application/json",
-                        url: window.location + "api/customers/register",
+                        url: "http://localhost:8000/api/customers/register",
                         data: JSON.stringify(formData),
                         dataType: 'json',
                         success: function (customer) {
                             var result = JSON.stringify(customer);
                             console.log(result);
-                           
+
                             if (JSON.stringify(customer) == 'true') {
                                 alert("Register Successful!")
-                               
+
 
 
                             } else {
@@ -662,88 +637,102 @@
                             console.log("ERROR: ", e);
                         }
                     });
-                resetData();
+                    resetData();
 
 
 
                 } else {
                     alert("Passwords do not match");
-                     resetData();
+                    resetData();
                 }
 
             }
 
         })
 
-      
-        function go1(text) {
+
+        function go1(text,path) {
             var txt = $('#profile').text()
             console.log(txt);
-            if (txt === 'profile') {
+            if (txt === 'Login') {
                 $(document).ready(function () {
                     $('#myModal').modal('show');
                 });
 
 
             } else {
-                var index = $("#data").text()
-                var index2 = $("#num").text()
-
-                var yourValue = text + " " + index + " " + index2;
-                var data = [index, index2]
+               
+               console.log(text+" "+path )
+                var data = $("#data").text()
+                var num = $("#num").text()
+                var profile = $("#profile").text()
+               
+                var yourValue = text+" "+ path+ " " + data+ " " + num + " " + profile;  
                 window.open('./detail.html?' + yourValue);
             }
 
 
 
         }
-        function go2(text) {
+        function go2(text,path) {
             var txt = $('#profile').text()
             console.log(txt);
-            if (txt === 'profile') {
+            if (txt === 'Login') {
                 $(document).ready(function () {
                     $('#myModal').modal('show');
                 });
 
 
             } else {
-                var index = $("#data2").text()
-                var index2 = $("#num2").text()
-                var yourValue = text + " " + " " + index + " " + index2;
+                var data = $("#data2").text()
+                var num = $("#num2").text()
+                var profile = $("#profile").text()
+               
+                var yourValue = text+" "+ path+ " " + data+ " " + num + " " + profile;  
                 window.open('./detail.html?' + yourValue);
             }
         }
-        function go3(text) {
+        function go3(text,path) {
             var txt = $('#profile').text()
             console.log(txt);
-            if (txt === 'profile') {
+            if (txt === 'Login') {
                 $(document).ready(function () {
                     $('#myModal').modal('show');
                 });
 
 
             } else {
-                var index = $("#data3").text()
-                var index2 = $("#num3").text()
-                var yourValue = text + " " + index + " " + index2;
+                var data = $("#data3").text()
+                var num = $("#num3").text()
+                var profile = $("#profile").text()
+               
+                var yourValue = text+" "+ path+ " " + data+ " " + num + " " + profile;  
                 window.open('./detail.html?' + yourValue);
             }
         }
-        function go4(text) {
+        function go4(text,path) {
             var txt = $('#profile').text()
             console.log(txt);
-            if (txt === 'profile') {
+            if (txt === 'Login') {
                 $(document).ready(function () {
                     $('#myModal').modal('show');
                 });
 
 
             } else {
-                var index = $("#data4").text()
-                var index2 = $("#num4").text()
-                var yourValue = text + " " + index + " " + index2;
+                var data = $("#data4").text()
+                var num = $("#num4").text()
+                var profile = $("#profile").text()
+               
+                var yourValue = text+" "+ path+ " " + data+ " " + num + " " + profile ;  
                 window.open('./detail.html?' + yourValue);
             }
+        }
+        function about(){
+              var profile = $("#profile").text()
+               
+               var yourValue = profile ;  
+               window.open('./aboutus.html?' + yourValue);
         }
 
     </script>
